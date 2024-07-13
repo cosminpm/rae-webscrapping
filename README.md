@@ -14,6 +14,7 @@ Es un fichero para ignorar directorios/ficheros que no queremos que se suban a l
 Es un fichero que librerias hacen falta para correr un determinado programa.
 
 
+## Comandos de git
 
 ## Enlaces de interes
 
