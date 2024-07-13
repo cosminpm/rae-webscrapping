@@ -1,6 +1,5 @@
 # RAE webscrapping
 
-
 ## Tipos de ficheros
 
 ### .gitignore
@@ -13,9 +12,13 @@ Es un fichero para ignorar directorios/ficheros que no queremos que se suban a l
 
 Es un fichero que librerias hacen falta para correr un determinado programa.
 
-
 ## Comandos de git
+
+- `git add <FICHERO>` para aniadir ficheros de interes en local
+- `git commit -m <MENSAJE>` para aniadir los cambios a la rama local
+- `git push` para enviar los cambios al remoto
 
 ## Enlaces de interes
 
-- [Libreria de pydantic](https://docs.pydantic.dev/latest/concepts/models/) : Contiene informacion sobre como construir clases.
+- [Libreria de pydantic](https://docs.pydantic.dev/latest/concepts/models/) : Contiene informacion sobre como construir
+  clases.
