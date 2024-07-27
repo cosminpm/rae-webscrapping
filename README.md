@@ -22,26 +22,14 @@ Es un fichero que librerias hacen falta para correr un determinado programa.
 
 - [Libreria de pydantic](https://docs.pydantic.dev/latest/concepts/models/) : Contiene informacion sobre como construir
   clases.
+- [User Angents](https://user-agents.net/): Para obtener agentes de usuario que nos permitan autorizarnos en algunas páginas web.
+- [Tipos de respuesta de HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status): Codigos y sus descripciones al realizar una solicitud HTTP.
+## Estructura de un proyecto
 
-## Ejercicio para clases de POO
-
-
-### Ejercicio 1
-
-Crear una clase Abstracta que sea Word/Palabra que contenga  los campos necesarios para una entrada de la RAE.
-  - palabra
-  - definicion
-  - enlace
-  - tipo
-
-### Ejercicio 2
-
-Crear distintas clases de palabras tales como Verbo y Sustantivo, haciendo un metodo de validacion para detectar si es un verbo en infinitivo u otra cosa, este metodo abstracto tiene que estar definido en la clase abstracta e implementado en las otras subclases.
-
-### Ejercicio 3
-
-Usar el operador Walrus en alguno de los ifs implementados.
-
+- Siempre habra una carpeta llamada `app` con el código.
+- Luego tendremos `schemas` que servira para definir las clases de "pydantic".
+- Luego tendremos `infraestructure` que servira para tener los modelos de las bases de datos.
+- Luego tendremos los `services` el codigo que usa las clases definidas con antelacion.
 
 ## Descripcion del proyecto
 
