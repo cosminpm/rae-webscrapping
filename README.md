@@ -18,6 +18,11 @@ Es un fichero que librerias hacen falta para correr un determinado programa.
 - `git commit -m <MENSAJE>` para aniadir los cambios a la rama local
 - `git push` para enviar los cambios al remoto
 
+## Comandos de bash
+- `pip`: Manjeador de librerias de Python
+  - `freeze`: Nos indica los paquetes que tenemos en nuestro virtual environment.
+
+
 ## Enlaces de interes
 
 - [Libreria de pydantic](https://docs.pydantic.dev/latest/concepts/models/) : Contiene informacion sobre como construir

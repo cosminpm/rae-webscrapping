@@ -1,20 +1,17 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
+
+from app.schemas.word_model import Word
+from app.services.rae.get_word import fetch_word
+
+rae_router: APIRouter = APIRouter(prefix="/rae", tags=["RAE"])
 
 
-rae_router: APIRouter = APIRouter(tags=["RAE"])
-
-
-@rae_router.get("/bolsa")
-def get_bolsa() -> list:
+@rae_router.get("/word/")
+def get_word(name: str) -> Word:
     """
-    Devuelve lo que hay en la bolsa
-    :return:
-    :rtype:
+    Get a word of the RAE and return it's definitions.
+
+    :return: the word with it's fields
+    :rtype: Word
     """
-    return ...
-
-
-@rae_router.post("/poner_en_bolsa")
-def post_en_bolsa(obj: ...):
-    ...
+    return fetch_word(name=name)
