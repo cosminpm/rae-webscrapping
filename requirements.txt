@@ -6,3 +6,5 @@ beautifulsoup4~=4.12.3
 starlette~=0.37.2
 loguru~=0.7.2
 SQLAlchemy~=2.0.32
+python-dotenv~=1.0.1
+python-telegram-bot==21.1.1

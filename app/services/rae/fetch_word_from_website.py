@@ -28,7 +28,10 @@ def parse_response_into_word(response: Response, name: str, final_url: str) -> W
 
     if status_code == status.HTTP_200_OK:
         soup = BeautifulSoup(response.text, features="html.parser")
-        complete_name = soup.find("header").text
+        if (header := soup.find("header")) is None:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"The word '{name}' has not been found.")
+
+        complete_name = header.text
         definitions = get_definitions(s=soup)
 
         return WordModel(name=complete_name,
@@ -38,7 +41,7 @@ def parse_response_into_word(response: Response, name: str, final_url: str) -> W
     elif status_code == status.HTTP_400_BAD_REQUEST:
         logger.error(f"Error for word: {name}")
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
-                            detail=f"There was an error in your request probably the word {name} does not exist.")
+                            detail=f"There was an error in your request probably the word '{name}' does not exist.")
     else:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                             detail=f"There was an unexpected error.")

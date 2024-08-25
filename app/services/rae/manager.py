@@ -9,9 +9,7 @@ def fetch_word(name: str) -> WordModel:
         orm = uow.session.query(Word).filter_by(name=name).first()
         if orm is None:
             word: WordModel = fetch_word_from_website(name)
-            orm = Word(**word.model_dump())
+            orm = Word(name=name, **word.model_dump(exclude={"name"}))
             uow.session.add(orm)
             return word
-
-        else:
-            return WordModel.model_validate(orm)
+        return WordModel.model_validate(orm)
