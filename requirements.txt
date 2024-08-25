@@ -5,3 +5,4 @@ requests~=2.32.3
 beautifulsoup4~=4.12.3
 starlette~=0.37.2
 loguru~=0.7.2
+SQLAlchemy~=2.0.32

@@ -5,7 +5,7 @@ from requests import Response
 from starlette import status
 from loguru import logger
 
-from app.schemas.word_model import Word
+from app.schemas.word_model import WordModel
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36 [ip:5.91.168.176]"
@@ -18,7 +18,7 @@ def _fetch_word_from_rae(name: str) -> tuple[Response, str]:
     return requests.get(final_url, headers=HEADERS), final_url
 
 
-def _parse_response_into_word(response: Response, name: str, final_url: str) -> Word:
+def parse_response_into_word(response: Response, name: str, final_url: str) -> WordModel:
     status_code = response.status_code
     logger.info(f"The response status code of the word: {name} was {status_code}.")
 
@@ -31,9 +31,9 @@ def _parse_response_into_word(response: Response, name: str, final_url: str) -> 
         complete_name = soup.find("header").text
         definitions = get_definitions(s=soup)
 
-        return Word(name=complete_name,
-                    definitions=definitions,
-                    url=final_url)
+        return WordModel(name=complete_name,
+                         definitions=definitions,
+                         url=final_url)
 
     elif status_code == status.HTTP_400_BAD_REQUEST:
         logger.error(f"Error for word: {name}")
@@ -44,7 +44,7 @@ def _parse_response_into_word(response: Response, name: str, final_url: str) -> 
                             detail=f"There was an unexpected error.")
 
 
-def fetch_word(name: str) -> Word:
+def fetch_word_from_website(name: str) -> WordModel:
     response, final_url = _fetch_word_from_rae(name)
-    return _parse_response_into_word(response=response, name=name, final_url=final_url)
+    return parse_response_into_word(response=response, name=name, final_url=final_url)
 
