@@ -1,0 +1,6 @@
+# Sesion 0
+
+- `clase_error_403.py`: Error con los headers. Hay que intentar reducir el problema que nos estamos encontrando al mínimo, en este caso se enseña el problema y un caso funcional reducido a la mínima expresión.
+- `error_process_finished.py`: Si vamos a ejecutar un script _(al comenzar, luego ya veremos otras formas de ver el código en ejecución)_, el más simple que sea, es importante imprimirlo por pantalla, puesto que si no se va a ejecutar y no vamos a saber que es lo que se está haciendo.
+- `nombre_ficheros.py`: Cuando creemos un fichero es importante no llamarlo por la palabra `test.*` puesto que si llamamos a un fichero: `test_algo` PyCharm el IDE entendera que es un fichero de tests y por lo tanto lo ejecutará con `pytest` y no con `python`. Para más información mirar la clase de tests.
+- `true_y_false.py`: Hay que entender bien los conceptos de igualdad, falsedad y veracidad, mirar por ejemplo los [siguientes recursos](https://www.w3schools.com/python/python_booleans.asp) o los videos asociados.
