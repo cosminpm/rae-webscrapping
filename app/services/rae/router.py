@@ -14,4 +14,5 @@ def get_word(name: str) -> WordModel:
     :return: the word with it's fields
     :rtype: WordModel
     """
+
     return fetch_word(name=name)

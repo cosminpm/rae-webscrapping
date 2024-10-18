@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
+
 from dotenv import load_dotenv
 
 from app.services.rae.router import rae_router
@@ -10,7 +11,7 @@ load_dotenv()
 app.include_router(rae_router)
 
 
-@app.get("/")
+@app.get("/hello_world")
 def root():
     return "Hola mundo"
 
