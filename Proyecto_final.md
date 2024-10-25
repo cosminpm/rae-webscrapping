@@ -108,7 +108,3 @@ Para cualquier duda o consulta, por favor contacta con el profesor o los asisten
 ---
 
 ¡Buena suerte con tu proyecto!
-
-
-Algunas extras tematicas:
-- 
