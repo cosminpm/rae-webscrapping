@@ -12,6 +12,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36 [ip:5.91.168.176]"
 }
 
+
 def _fetch_word_from_rae(name: str) -> tuple[HTTPResponse, str]:
     base_url = "https://dle.rae.es/"
     final_url = base_url + name
@@ -56,4 +57,3 @@ def parse_response_into_word(response: HTTPResponse, name: str, final_url: str) 
 def fetch_word_from_website(name: str) -> WordModel:
     response, final_url = _fetch_word_from_rae(name)
     return parse_response_into_word(response=response, name=name, final_url=final_url)
-
