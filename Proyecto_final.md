@@ -64,6 +64,7 @@ Estos elementos no se han explicado directamente, pero pueden aportar valor adic
 ### 4. *Uso de Firebase*
 - *Opciones*: Utiliza Firebase como base de datos o para añadir más funcionalidades.
 - *Valor*: Este punto cuenta por 2 puntos adicionales.
+- *Documentacion*: https://firebase.google.com/docs/reference/admin/python
 
 ### 5. *Modelo de Datos Avanzado*
 - *Relaciones*: Amplía la base de datos para que tenga al menos cinco tablas relacionadas entre sí.
