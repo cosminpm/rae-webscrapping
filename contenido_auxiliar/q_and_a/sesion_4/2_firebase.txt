@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/53762924/how-to-make-a-query-in-firebase-similar-to-a-sql-query
