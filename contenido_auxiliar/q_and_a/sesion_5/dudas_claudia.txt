@@ -1,0 +1,14 @@
+Hola Cosmin,
+
+Solo unas breves preguntas para hoy.
+
+- El uso de .venv lo ibas a explicar alrededor del minuto 2 del vídeo Estructura de proyecto y clases abstractas pero creo que se cortó. Lo que he encontrado explica que es un entorno virtual automático del proyecto. ¿Puedes explicarlo con tus palabras para entenderlo mejor, por favor?
+
+- web scraping
+https://realpython.com/python-web-scraping-practical-introduction/
+
+
+- Si la web donde estamos sacando la información pone prohibiciones, se nos va a caer el proyecto o una vez tenemos la respuesta 200 estamos seguros aunque la web añada prohibiciones después?
+
+Gracias,
+Saludos!

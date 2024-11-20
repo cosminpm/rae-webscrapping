@@ -1,0 +1,6 @@
+Buenos dias Cosmin, perdona que te moleste, empiezo ahora con la estructura del proyecto y desde pycharm en el apartado commit, no me sale nada ni me deja crear nada, creo que me he saltado algun paso, te envio captura a ver si me puedes ayudar.
+
+
+
+Dar click en la carpeta de project de arriba a la izquierda
+click derecho en crear

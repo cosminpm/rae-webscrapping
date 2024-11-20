@@ -1,0 +1,23 @@
+Las dudas o partes en las que me pierdo o no se seguir son 4:
+
+1º- Como poner un gitimore en la carpeta que uno quiere, ya que solo me la pone en la última librería, y lo he solucionado haciendo un corta pega. Pero por aprenderlo.
+
+2º- Como vincular GitHub a mi proyecto, no se seguir los pasos.
+
+3º- En comming me sale opciones, pero no se que hacer y no puedo hacer los pasos
+<image.png>
+
+4º- Al intentar instalar pydantic me da error.
+<image.png>
+
+1. .gitignore
+ 	se pone en el root en la carpeta principal
+
+2.
+	https://www.youtube.com/watch?v=sS7OOytmDcI&ab_channel=TechWebDocs
+
+3.
+	tutoria
+
+4. pip install pydantic
+
