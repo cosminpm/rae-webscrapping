@@ -89,6 +89,11 @@ Estos elementos no se han explicado directamente, pero pueden aportar valor adic
 ### 11. *Profiling*
 - *Velocidad*: Aplicar alguna lirberia como pyinstrument al proyecto para ver que metodos usan mas tiempo en el proyecto.
 
+### 12. *Bases de datos*
+- *BBDD*: Montar otra base de datos que no sea SQLlite, tal como MariaDB
+- *Valor*: Este punto cuenta por 2 puntos adicionales.
+
+
 ## Presentación Final
 
 Una vez finalizado el proyecto, se realizará una presentación (showcase) frente a los demás alumnos y el profesor. Durante la presentación, el profesor podrá hacer preguntas sobre el proyecto e incluso solicitar modificaciones en directo, preguntando cómo implementarían ciertas funcionalidades o cómo resolvieron determinados aspectos del proyecto.
