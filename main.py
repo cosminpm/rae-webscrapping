@@ -1,7 +1,12 @@
+import uvicorn
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
 def root():
-  return "Hola, mundo"
+    return "Hola, mundo"
 
 
 if __name__ == '__main__':
-    res = root()
-    print(res)
+    uvicorn.run(app)
