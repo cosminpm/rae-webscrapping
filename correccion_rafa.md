@@ -1,7 +1,7 @@
 
 
 # Correción CotizAPI
-Puntos pequeños a corregir:
+Puntos a corregir:
 - Eliminar los emojis en el código, en el `reamde.md` está bien, pero en el propio código no: [Ejemplo](https://github.com/RafaelRemoteDev/CotizAPI/blob/main/main.py#L12)
 - Debajo de la función `if __name__ == "__main__":` tienes que llamar a una función `main()` que tenga todo el código que has puesto ahí.
 - En el `requirements.txt` es buena práctica poner un comentario alrededor de cada libreria diciendo para que sirve, por ejemplo: `telegram~=0.0.1 # Connect to Telegram and send messages.` así para cada uno.
