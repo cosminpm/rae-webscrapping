@@ -25,6 +25,7 @@ async def get_definition(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
                                         parse_mode=ParseMode.MARKDOWN_V2)
 
 
+
 if __name__ == '__main__':
     application = Application.builder().token(os.getenv("TELEGRAM_TOKEN")).build()
     handler = CommandHandler("definition", get_definition)
