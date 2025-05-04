@@ -13,4 +13,3 @@ def fetch_word(name: str) -> WordModel:
             uow.session.add(orm)
             return word
         return WordModel.model_validate(orm)
-    ...
