@@ -1,7 +1,8 @@
-import requests
+import urllib.request
+from http.client import HTTPResponse
+
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
-from requests import Response
 from starlette import status
 from loguru import logger
 
@@ -12,14 +13,19 @@ HEADERS = {
 }
 
 
-def _fetch_word_from_rae(name: str) -> tuple[Response, str]:
+def _fetch_word_from_rae(name: str) -> tuple[HTTPResponse, str]:
     base_url = "https://dle.rae.es/"
     final_url = base_url + name
-    return requests.get(final_url, headers=HEADERS), final_url
+    req = urllib.request.Request(final_url)
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0')
+    req.add_header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8')
+    req.add_header('Accept-Language', 'en-US,en;q=0.5')
+
+    return urllib.request.urlopen(req), final_url
 
 
-def parse_response_into_word(response: Response, name: str, final_url: str) -> WordModel:
-    status_code = response.status_code
+def parse_response_into_word(response: HTTPResponse, name: str, final_url: str) -> WordModel:
+    status_code = response.status
     logger.info(f"The response status code of the word: {name} was {status_code}.")
 
     def get_definitions(s: BeautifulSoup) -> list[str]:
@@ -27,7 +33,8 @@ def parse_response_into_word(response: Response, name: str, final_url: str) -> W
         return [definition.get_text() for definition in defs]
 
     if status_code == status.HTTP_200_OK:
-        soup = BeautifulSoup(response.text, features="html.parser")
+        text = response.read().decode('utf-8')
+        soup = BeautifulSoup(text, features="html.parser")
         if (header := soup.find("header")) is None:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"The word '{name}' has not been found.")
 
@@ -50,4 +57,3 @@ def parse_response_into_word(response: Response, name: str, final_url: str) -> W
 def fetch_word_from_website(name: str) -> WordModel:
     response, final_url = _fetch_word_from_rae(name)
     return parse_response_into_word(response=response, name=name, final_url=final_url)
-

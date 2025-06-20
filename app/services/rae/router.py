@@ -6,7 +6,7 @@ from app.services.rae.manager import fetch_word
 rae_router: APIRouter = APIRouter(prefix="/rae", tags=["RAE"])
 
 
-@rae_router.get("/word/")
+@rae_router.get("/word")
 def get_word(name: str) -> WordModel:
     """
     Get a word of the RAE and return it's definitions.
